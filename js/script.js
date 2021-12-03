@@ -13,7 +13,7 @@ const yourKm = prompt('Quanti km vuoi percorrere?');
 // il prezzo del biglietto è definito in base ai km (0.21 € al km).
 // 2. CREARE VARIABILE CHE DEFINISCE IL PREZZO DEL BIGLIETTO IN BASE AL PREZZO IN KM NEL RANGE INDICATO.
 
-let kmPrice = 0.21;
+const kmPrice = 0.21;
 
 // moltiplico kmPrice x YourKm per definire costo passeggero//
 
@@ -21,12 +21,25 @@ let personalTotalPrice = kmPrice * yourKm;
 
 
 // --------STEP 3--------- //
-// va applicato uno sconto del 20% per i minorenni
-// 3. CREO ISTRUZ. CONDIZIONALE CHE DEFINISCE SCONTO MINORENNI CON IF E ELSE, DA AGGIUNGERE AL PREZZO TOT FINALE IN BASE ALL'ETA'.
+// va applicato uno sconto del 20% per i minorenni e uno sconto del 40% per gli over 65.
+// 3. CREO LE DUE COSTANTI SCONTO: 40% E 20%. 
+
+let saleTwenty = personalTotalPrice * 0.2;
+let saleForty = personalTotalPrice * 0.4;
 
 // --------STEP 4--------- //
-// va applicato uno sconto del 40% per gli over 65.
-// 4. ALL'ISTRUZ. CONDIZIONALE PRECEDENTE (STEP 3) AGGIUNGO VALORI CHE DEFINISCONO SCONTO OVER 65, DA AGGIUNGERE AL PREZZO TOT FINALE IN BASE ALL'ETA'.
+// 4. CREO ISTRUZ. CONDIZIONALI E AGGIUNGO VALORI CHE DEFINISCONO GLI SCONTI, DA AGGIUNGERE AL PREZZO TOT FINALE IN BASE ALL'ETA'.
+
+const outputHtml = document.getElementById('personalTotalPrice');
+
+if (yourAge <= 18)  {
+    outputHtml.innerHTML = "Il prezzo del tuo biglietto è" + `${saleTwenty}`;
+} else if (yourAge > 65) {
+    outputHtml.innerHTML = "Il prezzo del tuo biglietto è" + `${saleForty}`;
+} else {
+    outputHtml.innerHTML = "Il prezzo del tuo biglietto è" + `${personalTotalPrice}`;
+}
+    
 
 // --------STEP 5--------- //
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo
@@ -34,5 +47,5 @@ let personalTotalPrice = kmPrice * yourKm;
 
 // --------STEP 6--------- //
 // 6. STAMPARE I DATI RELATIVI AL BIGLIETTO (CON SCONTO ETA') NEL DOM.
-const outputHtml = document.getElementById('personalTotalPrice');
-htmlElement.innerHTML = `${personalTotalPrice}`;
+// const outputHtml = document.getElementById('personalTotalPrice');
+// outputHtml.innerHTML = personalTotalPrice;
