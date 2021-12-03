@@ -27,25 +27,22 @@ let personalTotalPrice = kmPrice * yourKm;
 let saleTwenty = personalTotalPrice * 0.2;
 let saleForty = personalTotalPrice * 0.4;
 
-// --------STEP 4--------- //
-// 4. CREO ISTRUZ. CONDIZIONALI E AGGIUNGO VALORI CHE DEFINISCONO GLI SCONTI, DA AGGIUNGERE AL PREZZO TOT FINALE IN BASE ALL'ETA'.
+// --------STEP 4-5--------- //
+// 4. STAMPARE I DATI RELATIVI AL BIGLIETTO (CON SCONTO ETA') NEL DOM.
+// 5. CREO ISTRUZ. CONDIZIONALI E AGGIUNGO VALORI CHE DEFINISCONO GLI SCONTI, DA AGGIUNGERE AL PREZZO TOT FINALE IN BASE ALL'ETA'.
 
 const outputHtml = document.getElementById('personalTotalPrice');
 
 if (yourAge <= 18)  {
-    outputHtml.innerHTML = "Il prezzo del tuo biglietto è" + `${saleTwenty}`;
+    outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice - saleTwenty) + "€";
 } else if (yourAge > 65) {
-    outputHtml.innerHTML = "Il prezzo del tuo biglietto è" + `${saleForty}`;
+    outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice - saleForty) + "€";
 } else {
-    outputHtml.innerHTML = "Il prezzo del tuo biglietto è" + `${personalTotalPrice}`;
+    outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + personalTotalPrice + " €" ;
 }
     
 
-// --------STEP 5--------- //
-// L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo
-// 5. !!! CERCARE !!!
-
 // --------STEP 6--------- //
-// 6. STAMPARE I DATI RELATIVI AL BIGLIETTO (CON SCONTO ETA') NEL DOM.
-// const outputHtml = document.getElementById('personalTotalPrice');
-// outputHtml.innerHTML = personalTotalPrice;
+// L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo
+// 6 !!! CERCARE !!!
+
