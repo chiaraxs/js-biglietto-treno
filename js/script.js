@@ -19,6 +19,9 @@ const kmPrice = 0.21;
 
 let personalTotalPrice = kmPrice * yourKm;
 
+// L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo.
+// USO TO.FIXED CON VALORE 2 //
+personalTotalPrice = personalTotalPrice.toFixed(2);
 
 // --------STEP 3--------- //
 // va applicato uno sconto del 20% per i minorenni e uno sconto del 40% per gli over 65.
@@ -41,8 +44,3 @@ if (yourAge <= 18)  {
     outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + personalTotalPrice + " €" ;
 }
     
-
-// --------STEP 6--------- //
-// L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo
-// 6 !!! CERCARE !!!
-
