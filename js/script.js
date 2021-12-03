@@ -4,8 +4,8 @@
 // Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero.
 // 1. CREARE DUE PROMPT CONST ALL'AVVIO CON RICHIESTA ETA' E KM DA VOLER PERCORRERE.
 
-const YourAge = prompt('Quanti anni hai?');
-const YourKm = prompt('Quanti km vuoi percorrere?');
+const yourAge = prompt('Quanti anni hai?');
+const yourKm = prompt('Quanti km vuoi percorrere?');
 
 
 // --------STEP 2--------- //
@@ -17,7 +17,7 @@ let kmPrice = 0.21;
 
 // moltiplico kmPrice x YourKm per definire costo passeggero//
 
-let personalTotalPrice = kmPrice * YourKm;
+let personalTotalPrice = kmPrice * yourKm;
 
 
 // --------STEP 3--------- //
@@ -34,4 +34,5 @@ let personalTotalPrice = kmPrice * YourKm;
 
 // --------STEP 6--------- //
 // 6. STAMPARE I DATI RELATIVI AL BIGLIETTO (CON SCONTO ETA') NEL DOM.
-const outputHtml = document.getElementById('price');
+const outputHtml = document.getElementById('personalTotalPrice');
+htmlElement.innerHTML = `${personalTotalPrice}`;
