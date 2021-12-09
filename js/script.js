@@ -2,10 +2,10 @@
 
 // --------STEP 1--------- //
 // Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero.
-// 1. CREARE DUE PROMPT CONST ALL'AVVIO CON RICHIESTA ETA' E KM DA VOLER PERCORRERE.
+// 1. CREARE DUE PROMPT CONST ALL'AVVIO CON RICHIESTA ETA' E KM DA VOLER PERCORRERE AGGIUNGENDO ANCHE IL PARSEINT.
 
-const yourAge = prompt('Quanti anni hai?');
-const yourKm = prompt('Quanti km vuoi percorrere?');
+const yourAge = parseInt(prompt('Quanti anni hai?'));
+const yourKm = parseInt(prompt('Quanti km vuoi percorrere?'));
 
 
 // --------STEP 2--------- //
@@ -38,7 +38,7 @@ const outputHtml = document.getElementById('personalTotalPrice');
 
 if (yourAge <= 18)  {
     outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice.toFixed(2) - saleTwenty) + "€";
-} else if (yourAge > 65) {
+} else if (yourAge >= 65) {
     outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice.toFixed(2) - saleForty) + "€";
 } else {
     outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + personalTotalPrice.toFixed(2) + " €" ;
