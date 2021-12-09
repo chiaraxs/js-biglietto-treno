@@ -29,18 +29,24 @@ let saleForty = personalTotalPrice * 0.4;
 
 // --------STEP 4-5--------- //
 // 4. STAMPARE I DATI RELATIVI AL BIGLIETTO (CON SCONTO ETA') NEL DOM.
-// 5. CREO ISTRUZ. CONDIZIONALI E AGGIUNGO VALORI CHE DEFINISCONO GLI SCONTI, DA AGGIUNGERE AL PREZZO TOT FINALE IN BASE ALL'ETA'.
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo.
-// 6. USO TO.FIXED CON VALORE 2 //
-
+// 5. USO TO.FIXED CON VALORE 2 //
 
 const outputHtml = document.getElementById('personalTotalPrice');
+const button = document.getElementById('button-box');
 
-if (yourAge <= 18)  {
-    outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice.toFixed(2) - saleTwenty) + "€";
-} else if (yourAge >= 65) {
-    outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice.toFixed(2) - saleForty) + "€";
-} else {
-    outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + personalTotalPrice.toFixed(2) + " €" ;
-}
+
+// 6. CREO ISTRUZ. CONDIZIONALI E AGGIUNGO VALORI CHE DEFINISCONO GLI SCONTI, DA AGGIUNGERE AL PREZZO TOT FINALE IN BASE ALL'ETA'.
+// 7. AGGIUNGO ANCHE EVENT LISTENER  //
+
+button.addEventListener('click', function () {
     
+    if (yourAge <= 18)  {
+        outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice.toFixed(2) - saleTwenty) + "€";
+    } else if (yourAge >= 65) {
+        outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + (personalTotalPrice.toFixed(2) - saleForty) + "€";
+    } else {
+        outputHtml.innerHTML = "Il prezzo del tuo biglietto è: " + personalTotalPrice.toFixed(2) + " €" ;
+    }
+})
+

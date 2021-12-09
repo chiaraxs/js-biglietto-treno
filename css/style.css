@@ -1,0 +1,12 @@
+#button-box {
+    width: 200px;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    background-color: royalblue;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+}
